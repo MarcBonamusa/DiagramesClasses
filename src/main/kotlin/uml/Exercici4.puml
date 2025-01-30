@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class PecaDeRoba {
+    -- Atributs --
+    - nom: String
+    - talla: String
+    - preu: Float
+    - categoria: String
+    -- Mètodes --
+    + constructor(nom: String, talla: String, preu: Float, categoria: String)
+    + aplicarDescompte(preu: Float): Float
+    + getCategoria(): String
+}
+
+class Client {
+    -- Atributs --
+    - nom: String
+    - email: String
+    - carret: List<PecesDeRoba>
+    -- Mètodes --
+    + constructor (nom: String, email: String, cistella: List<PecesDeRoba>)
+    + afegirPeca (carret: List<PecesDeRoba>): List<PecesDeRoba>
+    + totalCarret (carret: List<PecesDeRoba>): Float
+}
+
+@enduml
