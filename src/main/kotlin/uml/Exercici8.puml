@@ -41,7 +41,7 @@ class Alumne {
     - teoricaAprovada: Boolean
     - practriquesFetes: Int
     -- Mètodes --
-    + constructor(String, Int, Boolean, Int)
+    + constructor(String, Int)
     + sumarPractica()
     + getPractriquesFetes(): Int
     + setAprovarTeorica()
