@@ -8,21 +8,24 @@ class BegudaMonster {
     - cafeina: Float
     - color: String
     - volum: Int
+    -- Mètodes --
+    + constructor(String, String, Float, String, Int)
+    + getCafeina(): Float
 }
 
 class Participant {
     -- Atributs --
     - nom: String
-    - dataNaixement: LocalDate
+    - dataNaixement: Date
     - totalCafeina: Float
     - begudes: List<BegudaMonster>
-
     -- Mètodes --
-    + constructor(nom: String, dataNaixement: LocalDate, totalCafeina: Float, begudes: List<BegudaMonster>)
-    + registrarConsum(nova: List<BegudaMonster>): List<BegudaMonster>
-    + consultarCafeina(totalCafeina: Float): Float
-    + calcularEdat(dataNaixement: LocalDate): Int
-    + haSuperatLimitOMS(totalCafeina: Float): Boolean
+    + constructor(String, LocalDate, Float, List<BegudaMonster>)
+    + registrarConsum(BegudaMonster)
+    + consultarCafeina(): Float
+    + calcularEdat(): Int
+    - recalcularTotalCafeina(): Float
 }
+Participant "1" o-down- "M" BegudaMonster: Consumeix
 
 @enduml

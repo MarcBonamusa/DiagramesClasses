@@ -8,6 +8,12 @@ enum TipusPokemons {
     electric
 }
 
+enum RetornComparacio {
+    empat
+    guanya1
+    guanya2
+}
+
 class CartaPokemon {
     -- Atributs --
     - nom: String
@@ -15,16 +21,22 @@ class CartaPokemon {
     - puntsAtac: Int
     - puntsDefensa: Int
     -- Mètodes --
-    + constructor(nom: String, tipus: String, puntsAtac: Int, puntsDefensa: Int)
+    + constructor(String, TipusPokemons, Int, Int)
     + getNom(): String
-    + poderTotal(puntsAtac, puntsDefensa): Int
-    + compararPoder(poderTotal(puntsAtac, puntsDefensa)): Int
+    + poderTotal(): Int
+    + compararPoder(poderTotal(), CartaPokemon): RetornComparacio
 }
 
 class JugadorPokemon {
     -- Atributs --
     - nom: String
     - cartes: List<CartaPokemon>
+    -- Mètodes --
+    + constructor(String, List<CartaPokemon>)
 }
+
+CartaPokemon o-down- JugadorPokemon
+CartaPokemon "N" *-left- "1" TipusPokemons: és
+CartaPokemon *-right- RetornComparacio
 
 @enduml

@@ -8,8 +8,8 @@ class PecaDeRoba {
     - preu: Float
     - categoria: String
     -- Mètodes --
-    + constructor(nom: String, talla: String, preu: Float, categoria: String)
-    + aplicarDescompte(preu: Float): Float
+    + constructor(String, String, Float, String)
+    + aplicarDescompte(Float)
     + getCategoria(): String
 }
 
@@ -19,9 +19,11 @@ class Client {
     - email: String
     - carret: List<PecesDeRoba>
     -- Mètodes --
-    + constructor (nom: String, email: String, cistella: List<PecesDeRoba>)
-    + afegirPeca (carret: List<PecesDeRoba>): List<PecesDeRoba>
-    + totalCarret (carret: List<PecesDeRoba>): Float
+    + constructor (String, String, List<PecesDeRoba>)
+    + afegirPeca (Peca: PecaDeRoba)
+    + totalCarret (): Float
 }
+
+Client "1" o-down- "N" PecaDeRoba: Compra
 
 @enduml
